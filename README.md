@@ -24,7 +24,7 @@ The code in this repo can provably find such best possible solution. Moreover,
 The code finds the global optimum of optimization problem of the following form:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="72px" />
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="75px" />
 </p>
 
 where the objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
@@ -125,11 +125,7 @@ of original non - convex optimization problem in this region.
  Such convex constraint can be defined as follows. Let o<sub>k</sub>(x) be some upper concave overestimator function for f<sub>k</sub>(x) on interval
  a<sub>k</sub> to b<sub>k</sub>, and u<sub>k</sub>(x) be the convex underestimator of f<sub>k</sub>(x) on [a<sub>k</sub>, b<sub>k</sub>]
    interval. Then the convex constraint described above can be expressed as two
-   convex inequalities:
-
-   x<sub>k</sub> - o<sub>k</sub>(x) <= 0
-
-   u<sub>k</sub>(x) - x<sub>k</sub> <= 0
+   convex inequalities x<sub>k</sub> - o<sub>k</sub>(x) ≤ 0 and u<sub>k</sub>(x) - x<sub>k</sub> ≤ 0 .
 
   Thus, in order to add a new function to the set of supported functions
   by this optimizer, one either needs to provide convex under and over estimators

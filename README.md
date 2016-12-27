@@ -18,7 +18,7 @@ The code in this repo can provably find such best possible solution. Moreover,
  solution could be. For example, if during execution of engine optimization model
  you find a configuration that consumes 10 liters per 100 km, the algoritm will
  also provide a lower bound, which could be for example 9.5 liters. This means
-  that no other solution would yield consumption less than 0.95 liters. Depending on
+  that no other solution would yield consumption less than 9.5 liters. Depending on
   your requirements, you might as well stop the further optimization as current solution
   (10 l per 100 km) is sufficiently "optimal".
 
@@ -26,35 +26,13 @@ The code in this repo can provably find such best possible solution. Moreover,
 
 The code finds the global optimum of optimization problem of the following form:
 
-<b>min</b> F(x)
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
 
-x ∈ R^n
-
-<b>Subject to:</b>
-
-a ≤ x ≤ b
-
-g(x) ≤ 0,
-
-h(x) = 0
-
-where the vector valued functions F(x), g(x) and h(x) are known (white box) and need not be neither linear nor convex.
+where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
 
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
-<b>min</b> x_m
-
-x ∈ R^{m+1}
-
-<b>Subject to:</b>
-
-x_p ∈ [a_p, b_p], p ∈ {1 ... m}
-
-x_i = 0, i ∈ I
-
-x_j ≤ 0, j ∈ J
-
-x_k = f_k(x), k ∈ K
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
 
 where f_k(x) for any k ∈ K is some function, for which lower convex
 underestimator function and upper concave overestimator function are available.
@@ -142,7 +120,7 @@ of original non - convex optimization problem in this region.
  internally only a single input from vector x. Then the equality can be
  plotted as a line in 2d space:
 
-![Example convex relaxation](https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg)
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg?raw=true" alt="Example convex relaxation" style="width: 500px;"/>
 
  Such equality can be relaxed by constraining x_k to belong to the convex
  set, that contains all points f_k(x) = x_k. As such set is convex, the resulting

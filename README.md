@@ -26,7 +26,11 @@ The code in this repo can provably find such best possible solution. Moreover,
 
 The code finds the global optimum of optimization problem of the following form:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" style="width: 300px;"/>
+<p align="center">
+  
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="100px" />
+
+</p>
 
 where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
 

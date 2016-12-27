@@ -12,7 +12,7 @@ phenomenon, for example a model of fuel consumption depending on engine
 
 The code in this repo can provably find such best possible solution. Moreover,
  for suboptimal solutions an estimate is given of how much better best possible
- solution could be. For example, if during execution of engine optimization model
+ solution could be. For example, if during optimization of fuel consumption model
  you find a configuration that consumes 10 liters per 100 km, the algoritm will
  also provide a lower bound, which could be for example 9.5 liters. This means
   that no other solution would yield consumption less than 9.5 liters. Depending on

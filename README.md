@@ -49,7 +49,7 @@ them into computational graph with smaller number of arguments.
 Assume you would like to solve the following optimization problem:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="130px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.png?raw=true" alt="Generic optimization problem" height="145px"/>
 </p>
 
 Then the code could be used as follows:

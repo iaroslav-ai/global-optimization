@@ -1,4 +1,4 @@
-# Global optimization module in Python
+# Global optimization with guarantees
 
 This repository contains code that can be used to obtain solutions of
 arbitrary quality to the "white box" optimization problems, that is,

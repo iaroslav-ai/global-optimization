@@ -114,12 +114,12 @@ of original non - convex optimization problem in this region.
  plotted as a line in 2d space:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg?raw=true" alt="Example convex relaxation" width="500px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg?raw=true" alt="Example convex relaxation" width="700px"/>
 </p>
 
 
  Such equality can be relaxed by constraining x<sub>k</sub> to belong to the convex
- set, that contains all points f<sub>k</sub>(x) = x_k. As such set is convex, the resulting
+ set, that contains all points f<sub>k</sub>(x) = x<sub>k</sub>. As such set is convex, the resulting
  relaxed constraint is convex.
 
  Such convex constraint can be defined as follows. Let o<sub>k</sub>(x) be some upper concave overestimator function for f<sub>k</sub>(x) on interval
@@ -135,7 +135,7 @@ of original non - convex optimization problem in this region.
   by this optimizer, one either needs to provide convex under and over estimators
   or such estimators should be computed numerically.
 
-  *IMPORTANT* Both under and overestimators should become tighter
+  *IMPORTANT:* Both under and overestimators should become tighter
   and converge to the actual function values as the interval [a<sub>k</sub>, b<sub>k</sub>]
   becomes infinitely smaller. If this criterion is not met, then the optimization
   might not converge.

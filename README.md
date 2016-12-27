@@ -27,16 +27,16 @@ The code in this repo can provably find such best possible solution. Moreover,
 The code finds the global optimum of optimization problem of the following form:
 
 <p align="center">
-  
 <img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="100px" />
-
 </p>
 
-where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
+where the objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
 
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" style="width: 400px;"/>
+<p align="center">
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" height="180px"/>
+</p>
 
 where f_k(x) for any k ∈ K is some function, for which lower convex
 underestimator function and upper concave overestimator function are available.
@@ -51,7 +51,9 @@ them into computational graph with smaller number of arguments.
 
 Assume you would like to solve the following optimization problem:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" style="width: 400px;"/>
+<p align="center">
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="180px"/>
+</p>
 
 Then the code could be used as follows:
 

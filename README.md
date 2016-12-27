@@ -26,13 +26,13 @@ The code in this repo can provably find such best possible solution. Moreover,
 
 The code finds the global optimum of optimization problem of the following form:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
+<img src="https://cdn.rawgit.com/iaroslav-ai/global-optimization/blob/master/images/main_1.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
 
 where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
 
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
+<img src="https://cdn.rawgit.com/global-optimization/blob/master/images/main_2.svg?raw=true" alt="Generic optimization problem" style="width: 500px;"/>
 
 where f_k(x) for any k ∈ K is some function, for which lower convex
 underestimator function and upper concave overestimator function are available.

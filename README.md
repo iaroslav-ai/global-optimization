@@ -24,7 +24,7 @@ The code in this repo can provably find such best possible solution. Moreover,
 The code finds the global optimum of optimization problem of the following form:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="80px" />
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="72px" />
 </p>
 
 where the objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
@@ -32,7 +32,7 @@ where the objective F(x) and vector valued g(x) and h(x) are known (white box) a
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" height="145px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" height="130px"/>
 </p>
 
 where f<sub>k</sub>(x) for any k ∈ K is some function, for which lower convex
@@ -49,7 +49,7 @@ them into computational graph with smaller number of arguments.
 Assume you would like to solve the following optimization problem:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="145px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="130px"/>
 </p>
 
 Then the code could be used as follows:

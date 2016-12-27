@@ -1,6 +1,3 @@
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
-
 # Global optimization module in Python
 
 This repository contains code that can be used to obtain solutions of
@@ -27,7 +24,7 @@ The code in this repo can provably find such best possible solution. Moreover,
 The code finds the global optimum of optimization problem of the following form:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="100px" />
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" height="80px" />
 </p>
 
 where the objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
@@ -35,10 +32,10 @@ where the objective F(x) and vector valued g(x) and h(x) are known (white box) a
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" height="180px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_2.jpg?raw=true" alt="Generic optimization problem" height="145px"/>
 </p>
 
-where f_k(x) for any k ∈ K is some function, for which lower convex
+where f<sub>k</sub>(x) for any k ∈ K is some function, for which lower convex
 underestimator function and upper concave overestimator function are available.
 
 Currently user can select from a set of supported functions. Alternatively,
@@ -52,7 +49,7 @@ them into computational graph with smaller number of arguments.
 Assume you would like to solve the following optimization problem:
 
 <p align="center">
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="180px"/>
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" height="145px"/>
 </p>
 
 Then the code could be used as follows:
@@ -112,30 +109,33 @@ of original non - convex optimization problem in this region.
  The smaller the region, the tighter such convex relaxation become.
 
  The only non - convex element in the optimizatin formulation is equality
- of the form f(x) = x_k. Assume for simplicity that such function f takes
+ of the form f(x) = x<sub>k</sub>. Assume for simplicity that such function f takes
  internally only a single input from vector x. Then the equality can be
  plotted as a line in 2d space:
 
-<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg?raw=true" alt="Example convex relaxation" style="width: 500px;"/>
+<p align="center">
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/eq_relaxation.jpg?raw=true" alt="Example convex relaxation" width="500px"/>
+</p>
 
- Such equality can be relaxed by constraining x_k to belong to the convex
- set, that contains all points f_k(x) = x_k. As such set is convex, the resulting
+
+ Such equality can be relaxed by constraining x<sub>k</sub> to belong to the convex
+ set, that contains all points f<sub>k</sub>(x) = x_k. As such set is convex, the resulting
  relaxed constraint is convex.
 
- Such convex constraint can be defined as follows. Let o_k(x) be some upper concave overestimator function for f_k(x) on interval
- a_k to b_k, and u_k(x) be the convex underestimator of f_k(x) on [a_k, b_k]
+ Such convex constraint can be defined as follows. Let o<sub>k</sub>(x) be some upper concave overestimator function for f<sub>k</sub>(x) on interval
+ a<sub>k</sub> to b<sub>k</sub>, and u<sub>k</sub>(x) be the convex underestimator of f<sub>k</sub>(x) on [a<sub>k</sub>, b<sub>k</sub>]
    interval. Then the convex constraint described above can be expressed as two
    convex inequalities:
 
-   x_k - o(x) <= 0
+   x<sub>k</sub> - o<sub>k</sub>(x) <= 0
 
-   u(x) - x_k <= 0
+   u<sub>k</sub>(x) - x<sub>k</sub> <= 0
 
   Thus, in order to add a new function to the set of supported functions
   by this optimizer, one either needs to provide convex under and over estimators
   or such estimators should be computed numerically.
 
   *IMPORTANT* Both under and overestimators should become tighter
-  and converge to the actual function values as the interval [a_k, b_k]
+  and converge to the actual function values as the interval [a<sub>k</sub>, b<sub>k</sub>]
   becomes infinitely smaller. If this criterion is not met, then the optimization
   might not converge.

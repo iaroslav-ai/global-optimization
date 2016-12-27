@@ -28,7 +28,7 @@ The code finds the global optimum of optimization problem of the following form:
 
 <img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/main_1.jpg?raw=true" alt="Generic optimization problem" style="width: 300px;"/>
 
-where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex. 
+where the vector valued objective F(x) and vector valued g(x) and h(x) are known (white box) and need not be neither linear nor convex.
 
 The following equivalent formulation is used, that is obtained by introducing extra variables:
 
@@ -47,17 +47,7 @@ them into computational graph with smaller number of arguments.
 
 Assume you would like to solve the following optimization problem:
 
-<b>min</b> z
-
-x, y, z ∈ R
-
-<b>Subject to:</b>
-
-x ∈ [-0.7, 1.0], z ∈ [-0.3, 1.0]
-
-z = xy
-
-x + y - 0.7 ≤ 0
+<img src="https://github.com/iaroslav-ai/global-optimization/blob/master/images/example.jpg?raw=true" alt="Generic optimization problem" style="width: 400px;"/>
 
 Then the code could be used as follows:
 

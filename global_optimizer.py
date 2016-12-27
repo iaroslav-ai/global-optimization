@@ -493,8 +493,8 @@ class GlobalOptimizer():
         self.frontier = [None] # array of items to explore
 
         # this contains data about the best solution found so far
-        self.best_x = None
-        self.best_upper_bound = None # this is used to cut down the search space
+        self.min_x = None
+        self.min_objective = None # this is used to cut down the search space
         self.best_lower_bound = None # bounds on solution
 
         self.epsilon = epsilon
@@ -511,8 +511,8 @@ class GlobalOptimizer():
         p.calculate_bound(upper=True)
         p.calculate_bound(upper=False)
 
-        self.best_upper_bound = p.upper_bound
-        self.best_x = p.upper_bound_x
+        self.min_objective = p.upper_bound
+        self.min_x = p.upper_bound_x
         self.best_lower_bound = p.lower_bound
 
         self.frontier = [p] # initialize the frontier
@@ -527,7 +527,7 @@ class GlobalOptimizer():
 
         # check for termination criterion
         """"""
-        if self.best_upper_bound - self.root_problem.lower_bound <= self.optimality_gap + self.epsilon:
+        if self.min_objective - self.root_problem.lower_bound <= self.optimality_gap + self.epsilon:
             self.frontier = [] # finished - no need to explore any further frontier
             return
 
@@ -536,7 +536,7 @@ class GlobalOptimizer():
 
         # cut space search if possible. adding epsilon is necessary to avoid infinite loop
         # due to numeric errors coming from convex optimizer
-        if instance.lower_bound + self.epsilon >= self.best_upper_bound:
+        if instance.lower_bound + self.epsilon >= self.min_objective:
             return
 
         # split instance
@@ -547,9 +547,9 @@ class GlobalOptimizer():
             p.calculate_bound(upper=True)
 
             # if there is an improvement in upper bound - remeber that
-            if p.upper_bound < self.best_upper_bound:
-                self.best_upper_bound = p.upper_bound
-                self.best_x = p.upper_bound_x
+            if p.upper_bound < self.min_objective:
+                self.min_objective = p.upper_bound
+                self.min_x = p.upper_bound_x
 
             p.calculate_bound(upper=False)
 
@@ -567,6 +567,6 @@ class GlobalOptimizer():
         self.initialize()
         idx = 0
         while not self.finished():
-            print "Iteration", idx, "lower bound:", self.root_problem.lower_bound, "upper bound:", self.best_upper_bound
+            print "Iteration", idx, "lower bound:", self.root_problem.lower_bound, "upper bound:", self.min_objective
             idx += 1
             self.iterate()
